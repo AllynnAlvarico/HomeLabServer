@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>zpulse.homelab</groupId>
 	<artifactId>sysgauge</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>sysgauge</name>
-	<description>sysgauge</description>
+	<version>0.0.2</version>
+	<name>sys gauge</name>
+	<description>sys gauge</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -47,7 +47,7 @@
 		<dependency>
 			<groupId>com.github.oshi</groupId>
 			<artifactId>oshi-core</artifactId>
-			<version>6.4.0</version> <!-- Use the latest version -->
+			<version>6.4.2</version> <!-- Use the latest version -->
 		</dependency>
 	</dependencies>
 
