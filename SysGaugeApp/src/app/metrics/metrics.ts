@@ -13,10 +13,12 @@ import { CommonModule } from '@angular/common';
 
 export class Metrics implements OnInit, OnDestroy {
   metrics = {
-    cpuLoad: 0,
+    cpuLoadPercent: 0,
     totalMemoryMb: 0,
     usedMemoryMb: 0,
-    cpuTemperatureC: 0
+    cpuTemperatureC: 0,
+    uptimeMs: 0,
+    hostname: String
   };
 
   private sub?: Subscription;
@@ -30,13 +32,22 @@ export class Metrics implements OnInit, OnDestroy {
   }
 
   fetch() {
-    this.http.get<any>('/api/metrics').subscribe((data) => {
+    this.http.get<any>('/sys/api/metrics').subscribe((data) => {
       this.metrics = data;
     });
   }
 
   ngOnDestroy() {
     this.sub?.unsubscribe();
+  }
+
+  formatDuration(ms:number) {
+    const totalSeconds = Math.floor(ms / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    return `${days} d : ${hours}h : ${minutes} m : ${seconds}`;
   }
 
   /**
