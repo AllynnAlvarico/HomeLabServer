@@ -1,0 +1,6 @@
+{
+  "/sys/api": {
+    "target": "http://zpulsehomelab.linkpc.net:8080",
+    "secure": false
+  }
+}

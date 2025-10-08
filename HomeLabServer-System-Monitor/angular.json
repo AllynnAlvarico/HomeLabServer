@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SysGaugeApp": {
+    "HomeLabServer-System-Monitor": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -58,10 +58,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "SysGaugeApp:build:production"
+              "buildTarget": "HomeLabServer-System-Monitor:build:production"
             },
             "development": {
-              "buildTarget": "SysGaugeApp:build:development"
+              "buildTarget": "HomeLabServer-System-Monitor:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,6 +88,6 @@
     }
   },
   "cli": {
-    "analytics": "7efcb70c-bf7d-4355-9995-5f80a2637f6b"
+    "analytics": "e1b4e57e-b24e-485f-82c5-c21f1fc09459"
   }
 }
