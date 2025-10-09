@@ -1,6 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {interval, Subscription} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {Component, ChangeDetectorRef, Input, OnDestroy, OnInit} from '@angular/core';
+import { Subscription } from 'rxjs';
+import { MetricsService, Metrics } from './metrics';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,32 +10,32 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   styleUrl: './server-gauge.css'
 })
-export class ServerGauge {
-    metrics = {
+export class ServerGauge implements OnInit, OnDestroy {
+  @Input() apiUrl: string = '/sys/api/metrics';
+    metrics: Metrics = {
       cpuLoadPercent: 0,
       totalMemoryMb: 0,
       usedMemoryMb: 0,
       cpuTemperatureC: 0,
       uptimeMs: 0,
-      hostname: String
+      hostname: "Unknown"
     };
     private sub?: Subscription;
 
-    constructor(private http: HttpClient) {
+    constructor(private metricsService: MetricsService, private cd: ChangeDetectorRef) {
     }
 
     ngOnInit() {
-      this.fetch();
-      this.sub = interval(800).subscribe(() => this.fetch());
-    }
-
-    fetch() {
-      this.http.get<any>('/sys/api/metrics').subscribe((data) => {
-        this.metrics = data;
+      console.log('[ServerGauge] ngOnInit called');
+      this.sub = this.metricsService.pollMetrics(800).subscribe(data => {
+        Object.assign(this.metrics, data)
+        this.cd.markForCheck();
+        // console.log("hello");
       });
     }
 
     ngOnDestroy() {
+      console.log('[ServerGauge] ngOnDestroy called');
       this.sub?.unsubscribe();
     }
 
