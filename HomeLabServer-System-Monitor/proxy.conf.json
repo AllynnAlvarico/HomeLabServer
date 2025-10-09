@@ -10,5 +10,11 @@
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/api/echo": "/sys/api/metrics" }
+  },
+  "/api/max": {
+    "target": "http://zpulsehomelab.linkpc.net:8083",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/api/max": "/sys/api/metrics" }
   }
 }
