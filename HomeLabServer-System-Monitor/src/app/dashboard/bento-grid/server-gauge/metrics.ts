@@ -18,10 +18,10 @@ export interface Metrics {
 export class MetricsService {
   constructor(private http: HttpClient) {}
 
-  pollMetrics(intervalMs: number = 800): Observable<Metrics> {
+  pollMetrics(apiUrl:string, intervalMs: number = 800): Observable<Metrics> {
     // Emits values every intervalMs, requests latest on each tick
     return timer(0, intervalMs).pipe(
-      switchMap(() => this.http.get<Metrics>('/sys/api/metrics')),
+      switchMap(() => this.http.get<Metrics>(apiUrl)),
       // tap(data => console.log('polled metrics:', data))
     );
   }

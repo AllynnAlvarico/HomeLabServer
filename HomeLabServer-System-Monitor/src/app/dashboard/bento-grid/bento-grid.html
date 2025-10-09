@@ -1,8 +1,7 @@
 <div class="bg-black px-10 py-4">
   <section class="grid grid-cols-1 md:grid-cols-2 gap-6 my-5">
-<!--    <app-server-gauge [apiUrl]="'http://server1.example.com/sys/api/metrics'"></app-server-gauge>-->
-    <app-server-gauge></app-server-gauge>
-    <app-server-gauge></app-server-gauge>
+    <app-server-gauge [apiUrl]="'/api/delta'"></app-server-gauge>
+    <app-server-gauge [apiUrl]="'/api/echo'"></app-server-gauge>
     <app-server-gauge></app-server-gauge>
     <app-server-gauge></app-server-gauge>
   </section>

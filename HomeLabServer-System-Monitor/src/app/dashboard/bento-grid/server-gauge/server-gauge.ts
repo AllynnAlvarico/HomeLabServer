@@ -27,7 +27,7 @@ export class ServerGauge implements OnInit, OnDestroy {
 
     ngOnInit() {
       console.log('[ServerGauge] ngOnInit called');
-      this.sub = this.metricsService.pollMetrics(800).subscribe(data => {
+      this.sub = this.metricsService.pollMetrics(this.apiUrl, 800).subscribe(data => {
         Object.assign(this.metrics, data)
         this.cd.markForCheck();
         // console.log("hello");
