@@ -16,5 +16,11 @@
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/api/max": "/sys/api/metrics" }
+  },
+  "/api/cooper": {
+    "target": "http://zpulsehomelab.linkpc.net:8084",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/api/cooper": "/sys/api/metrics" }
   }
 }

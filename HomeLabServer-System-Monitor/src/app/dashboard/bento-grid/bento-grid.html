@@ -1,8 +1,8 @@
-<div class="bg-black px-10 py-4">
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-6 my-7">
+<div class="px-10 py-0.5 border-r-4 border-r-blue-950">
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-6 my-5">
+    <app-server-gauge [apiUrl]="'/api/cooper'" class="cursor-pointer"></app-server-gauge>
+    <app-server-gauge [apiUrl]="'/api/max'" class="cursor-pointer"></app-server-gauge>
     <app-server-gauge [apiUrl]="'/api/delta'" class="cursor-pointer"></app-server-gauge>
     <app-server-gauge [apiUrl]="'/api/echo'" class="cursor-pointer"></app-server-gauge>
-    <app-server-gauge [apiUrl]="'/api/max'" class="cursor-pointer"></app-server-gauge>
-    <app-server-gauge></app-server-gauge>
   </section>
 </div>

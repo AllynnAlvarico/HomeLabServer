@@ -1,10 +1,10 @@
-<div class="max-w-md mx-auto bg-gray-100 rounded-xl shadow-lg px-5 py-4 flex flex-col items-center">
-  <h2 class="text-xl font-bold mb-1">{{metrics.hostname}}</h2>
+<div class="max-w-md mx-auto bg-gray-100 rounded-xl shadow-2xl px-5 py-4 flex flex-col items-center group">
+  <h2 class="text-xl font-bold mb-1 group-hover:underline group-hover:text-blue-800">{{metrics.hostname}}</h2>
   <h3 class="tex-md font-medium">System Metrics</h3>
 
   <div class="relative w-80 h-44 flex justify-center items-end">
     <svg viewBox="0 0 320 180" class="w-full h-full">
-      <!-- Background arc -->
+      <!-- Background arc  component-->
       <path
         d="M60,160 A100,100 0 0,1 260,160"
         fill="none"
@@ -12,7 +12,8 @@
         stroke-width="28"
         stroke-linecap="round"
       />
-      <!-- Orange arc fill up to needle -->
+<!--    Orange arc fill up to needle -->
+<!--    [attr.d]="getArcPath(metrics.cpuLoadPercent)"-->
       <path
         [attr.d]="getArcPath(metrics.cpuLoadPercent)"
         fill="none"
@@ -53,10 +54,17 @@
     <span>{{ formatDuration(metrics.uptimeMs)}}</span>
   </div>
   <div class="flex justify-between w-full text-sm text-gray-700 mt-6">
-    <div class="flex flex-col">
+    <div class="flex flex-col text-center">
       <span>Memory Usage: {{ (metrics.usedMemoryMb / metrics.totalMemoryMb)  * 100 | number:'1.0-0'}} %</span>
       <span>Mem: {{ metrics.usedMemoryMb }} / {{ metrics.totalMemoryMb }} MB</span>
     </div>
-    <span>CPU Temp: {{ metrics.cpuTemperatureC }}°C</span>
+    <div class="flex flex-col text-center">
+      <span>CPU Temp: {{ metrics.cpuTemperatureC }}°C</span>
+      <span>CPU Core: {{ metrics.cpuCores }}</span>
+      <div class="flex flex-row gap-4">
+        <span>Current: {{ metrics.currentCpuFrequencyGhz }}</span>
+        <span>Ghz: {{ metrics.maxCpuFrequencyGhz | number:'1.0-2' }}</span>
+      </div>
+    </div>
   </div>
 </div>

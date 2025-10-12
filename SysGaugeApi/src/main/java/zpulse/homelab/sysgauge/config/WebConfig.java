@@ -12,9 +12,9 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("*") // or specify your frontend URL this allows me to secure the frontend site
+                        .allowedOrigins("https://zpulsehomelab.linkpc.net/") // or specify your frontend URL this allows me to secure the frontend site
                         //sample for that is "http://localhost:4200" or a domain name
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedMethods("GET")
                         .allowedHeaders("*");
             }
         };
