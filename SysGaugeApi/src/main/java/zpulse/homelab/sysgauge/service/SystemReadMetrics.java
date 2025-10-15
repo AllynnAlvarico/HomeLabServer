@@ -82,11 +82,15 @@ public class SystemReadMetrics {
     }
 
     private String getHostname(){
+        String envHostname = System.getenv("hostname"); // or "hostname" if that's your env var
+        if (envHostname != null && !envHostname.isEmpty()) {
+            return envHostname;
+        }
         try {
             InetAddress addr = InetAddress.getLocalHost();
             return addr.getHostName();
         } catch (UnknownHostException e) {
-//            LOG.info("Error getting hostname");
+            // LOG.info("Error getting hostname");
         }
         return "unknown";
     }
