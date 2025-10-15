@@ -1,0 +1,37 @@
+/* Base CSS*/
+/* purpose is to make the css styling to be easy
+ * when applying a base css to all tags or depends
+ * and reduces duplications on developing
+*/
+label, input {
+  @apply my-2 text-center;
+}
+input, button {
+  @apply self-center;
+  @apply w-3/4 h-14;
+  @apply hover:text-xl;
+}
+/*Specific tags CSS configuration*/
+form {
+  @apply flex flex-col justify-center bg-white;
+  @apply text-center text-2xl tracking-widest;
+  @apply rounded border-black border-t-2 border-b-2;
+  @apply w-96 my-5 gap-1;
+}
+label {
+  @apply text-blue-400;
+}
+input {
+  @apply bg-gray-100;
+  @apply text-blue-500 text-base;
+  @apply shadow-xl rounded-2xl;
+  @apply px-5 py-2;
+}
+button {
+  @apply bg-blue-400;
+  @apply text-white font-extrabold text-lg;
+  @apply my-5 py-1;
+  @apply hover:text-black hover:bg-white hover:delay-100;
+  border: 5px outset rgba(28,110,164,0.4);
+  border-radius: 40px 10px 40px 20px;
+}
