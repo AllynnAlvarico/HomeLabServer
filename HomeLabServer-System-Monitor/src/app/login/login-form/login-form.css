@@ -14,18 +14,22 @@ input, button {
 /*Specific tags CSS configuration*/
 form {
   @apply flex flex-col justify-center bg-white;
-  @apply text-center text-2xl tracking-widest;
-  @apply rounded border-black border-t-2 border-b-2;
+  @apply text-center text-2xl tracking-widest font-sans;
+  @apply rounded-3xl border-black border-2 border-b-4 border-r-4 shadow-xl;
   @apply w-96 my-5 gap-1;
 }
 label {
   @apply text-blue-400;
+  @apply font-bold mt-5;
 }
 input {
   @apply bg-gray-100;
   @apply text-blue-500 text-base;
   @apply shadow-xl rounded-2xl;
   @apply px-5 py-2;
+  border: 5px outset rgba(28,110,164,0.4);
+
+  /*@apply invalid:border-red-600;*/
 }
 button {
   @apply bg-blue-400;
