@@ -1,0 +1,5 @@
+section {
+  width: calc(100% - 30%);
+  height: calc(100% - 12%);
+  @apply border-black border-4 border-b-8 border-r-8 shadow-xl;
+}

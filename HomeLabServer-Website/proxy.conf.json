@@ -1,0 +1,26 @@
+{
+  "/api/delta": {
+    "target": "http://zpulsehomelab.linkpc.net:8080",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/api/delta": "/sys/api/metrics" }
+  },
+  "/api/echo": {
+    "target": "http://zpulsehomelab.linkpc.net:8082",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/api/echo": "/sys/api/metrics" }
+  },
+  "/api/max": {
+    "target": "http://zpulsehomelab.linkpc.net:8083",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/api/max": "/sys/api/metrics" }
+  },
+  "/api/cooper": {
+    "target": "http://zpulsehomelab.linkpc.net:8084",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/api/cooper": "/sys/api/metrics" }
+  }
+}
