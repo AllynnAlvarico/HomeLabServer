@@ -1,4 +1,5 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {Component, ElementRef, ViewChild, AfterViewInit, PLATFORM_ID, Inject} from '@angular/core';
 
 @Component({
   selector: 'app-matrix',
@@ -11,22 +12,27 @@ export class MatrixComponent implements AfterViewInit {
   @ViewChild('matrixCanvas', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
   private ctx!: CanvasRenderingContext2D;
 
-  matrixChars: string[] = "zpulsehomelabserverZPULSEHOMELABSERVER0123456789".split("");
+  matrixChars: string[] = "zpulsehomelabserver".split("");
   // matrixChars: string[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}".split("");
   fontSize: number = 10;
   columns!: number;
   drops!: number[];
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    // console.log(platformId.toString());
+  }
+
   ngAfterViewInit(): void {
-    const canvas = this.canvasRef.nativeElement;
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-    this.ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+    if (isPlatformBrowser(this.platformId)) {
+      const canvas = this.canvasRef.nativeElement;
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+      this.ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
-    this.columns = Math.floor(canvas.width / this.fontSize);
-    this.drops = Array(this.columns).fill(1);
-
-    setInterval(() => this.draw(), 35);
+      this.columns = Math.floor(canvas.width / this.fontSize);
+      this.drops = Array(this.columns).fill(1);
+      setInterval(() => this.draw(), 35);
+    }
   }
 
   draw(): void {
