@@ -22,5 +22,29 @@
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/api/cooper": "/sys/api/metrics" }
+  },
+  "/portainer/delta": {
+    "target": "http://192.168.178.150:9443",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/portainer/delta": "/#!/auth" }
+  },
+  "/portainer/echo": {
+    "target": "http://192.168.178.139:9443",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/portainer/echo": "/#!/auth" }
+  },
+  "/portainer/max": {
+    "target": "http://192.168.178.145:9443",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/portainer/max": "/#!/auth" }
+  },
+  "/portainer/cooper": {
+    "target": "http://192.168.178.148:9443",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/portainer/cooper": "/#!/auth" }
   }
 }

@@ -204,7 +204,14 @@ module.exports = {
         'shake-horizontal': 'shake-horizontal 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both',
         'git-branch-pulse': 'git-branch-pulse 2s ease-in-out infinite',
       }
-    }
+    },
+    screens: {
+      'xs': '375px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+    },
   },
   plugins: []
 }

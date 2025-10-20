@@ -26,6 +26,7 @@
 }
 
 .description {
+  @apply xs:text-white;
   max-width: 80%;
   margin: auto;
   font-weight: 600;
@@ -74,14 +75,6 @@
 
 .tab--2:hover ~ .indicator {
   left: calc(50% - 2px);
-}
-
-.modal--footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  border-top: 1px solid #ebebec;
 }
 
 .form {
