@@ -1,12 +1,14 @@
-<div class="h-screen flex justify-center items-center">
-  <app-matrix class="absolute -z-50"></app-matrix>
-  <section class="w-full rounded-3xl flex justify-between backdrop-blur-md">
+<!--<div class="sm:w-full">-->
+<!--  <app-matrix class="sm:w-full"></app-matrix>-->
+<!--  <section class="sm:flex sm:flex-col lg:flex-row">-->
+<!--    <app-login-form class="sm:mx-10 sm:my-10 lg:mx-10 lg:my-10"></app-login-form>-->
+<!--    <app-login-collage></app-login-collage>-->
+<!--  </section>-->
+<!--</div>-->
+<div>
+  <app-matrix></app-matrix>
+  <section >
     <app-login-form class="mx-auto self-center"></app-login-form>
-<!--    <img-->
-<!--      class="rounded-r-2xl object-cover"-->
-<!--      ngSrc="https://placehold.co/500x800"-->
-<!--      alt="image name holder"-->
-<!--      width="500" height="800" priority/>-->
-    <app-login-collage></app-login-collage>
+    <app-login-collage class="mx-auto self-center"></app-login-collage>
   </section>
 </div>

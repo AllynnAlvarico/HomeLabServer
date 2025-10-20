@@ -1,4 +1,16 @@
+div {
+  @apply h-screen flex justify-center items-center;
+}
+app-matrix {
+  @apply absolute -z-50;
+}
+/*app-login-form app-login-collage{*/
+/*  @apply mx-auto self-center;*/
+/*}*/
+
+
 section {
+  @apply w-full rounded-3xl flex justify-between backdrop-blur-md;
   width: calc(100% - 30%);
   height: calc(100% - 12%);
   @apply border-black border-4 border-b-8 border-r-8 shadow-xl;

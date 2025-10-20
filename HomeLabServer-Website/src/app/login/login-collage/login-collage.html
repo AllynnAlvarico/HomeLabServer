@@ -1,31 +1,21 @@
-<!--<div class="parent">-->
-<!--  <div class="div1">-->
-<!--        <img-->
-<!--          class="object-cover"-->
-<!--          ngSrc="https://placehold.co/200x200"-->
-<!--          alt="image name holder"-->
-<!--          width="200" height="200" priority/>-->
-<!--  </div>-->
-<!--  <div class="div2">-->
-<!--    <img-->
-<!--      class="rounded-tr-2xl object-cover"-->
-<!--      ngSrc="https://placehold.co/300x300"-->
-<!--      alt="image name holder"-->
-<!--      width="300" height="300" priority/>-->
-<!--  </div>-->
-<!--  <div class="div3">-->
-<!--    <img-->
-<!--      class="object-cover"-->
-<!--      ngSrc="https://placehold.co/300x200"-->
-<!--      alt="image name holder"-->
-<!--      width="300" height="200" priority/>-->
-<!--  </div>-->
-<!--  <div class="div4">4</div>-->
-<!--  <div class="div5">5</div>-->
-<!--  <div class="div6">6</div>-->
-<!--  <div class="div8">8</div>-->
-<!--  <div class="div9">9</div>-->
-<!--  <div class="div10">10</div>-->
-<!--  <div class="div11">11</div>-->
-<!--  <div class="div12">12</div>-->
-<!--</div>-->
+<div class="flex flex-col items-center">
+  @for (row of hexRows; track row;) {
+    <div class="flex justify-center gap-1 -my-5">
+      @for (img of row; track img.key) {
+        <div class="hex-clip w-[150px] aspect-[1/1.15] object-cover bg-white overflow-visible" >
+          <img
+            class="hex-clip w-full aspect-[1/1.15] object-cover hover:cursor-pointer hover:animate-none"
+            [ngClass]="img.animation"
+            [ngSrc]="img.value"
+            [width]="imgWidth"
+            [height]="imgHeight"
+            alt="{{img.value}}"
+            priority
+          />
+        </div>
+
+      }
+    </div>
+  }
+</div>
+<!--<p class="text-white my-10 animate-vertical-flip">Hello</p>-->
