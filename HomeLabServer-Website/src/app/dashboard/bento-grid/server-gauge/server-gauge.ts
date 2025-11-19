@@ -29,7 +29,7 @@ export class ServerGauge implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-      console.log('[ServerGauge] ngOnInit called');
+      // console.log('[ServerGauge] ngOnInit called');
       this.sub = this.metricsService.pollMetrics(this.apiUrl, 1100).subscribe(data => {
         Object.assign(this.metrics, data)
         this.cd.markForCheck();
@@ -38,7 +38,7 @@ export class ServerGauge implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-      console.log('[ServerGauge] ngOnDestroy called');
+      // console.log('[ServerGauge] ngOnDestroy called');
       this.sub?.unsubscribe();
     }
 

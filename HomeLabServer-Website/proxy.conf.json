@@ -1,48 +1,48 @@
 {
   "/api/delta": {
-    "target": "http://zpulsehomelab.linkpc.net:8080",
+    "target": "http://dsystem.zpulsehomelab.com",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/api/delta": "/sys/api/metrics" }
   },
   "/api/echo": {
-    "target": "http://zpulsehomelab.linkpc.net:8082",
+    "target": "http://esystem.zpulsehomelab.com",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/api/echo": "/sys/api/metrics" }
   },
   "/api/max": {
-    "target": "http://zpulsehomelab.linkpc.net:8083",
+    "target": "http://msystem.zpulsehomelab.com",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/api/max": "/sys/api/metrics" }
   },
   "/api/cooper": {
-    "target": "http://zpulsehomelab.linkpc.net:8084",
+    "target": "http://csystem.zpulsehomelab.com",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/api/cooper": "/sys/api/metrics" }
   },
   "/portainer/delta": {
-    "target": "http://192.168.178.150:9443",
+    "target": "http://dsp.zpulsehomelab.com",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/portainer/delta": "/#!/auth" }
   },
   "/portainer/echo": {
-    "target": "http://192.168.178.139:9443",
+    "target": "http://esp.zpulsehomelab.com",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/portainer/echo": "/#!/auth" }
   },
   "/portainer/max": {
-    "target": "http://192.168.178.145:9443",
+    "target": "http://msp.zpulsehomelab.com",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/portainer/max": "/#!/auth" }
   },
   "/portainer/cooper": {
-    "target": "http://192.168.178.148:9443",
+    "target": "http://csp.zpulsehomelab.com",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/portainer/cooper": "/#!/auth" }
