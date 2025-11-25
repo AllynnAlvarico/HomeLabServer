@@ -29,7 +29,9 @@ export class LoginCollage {
     ],
     [
       { key: 4, value: this.mariadb(), animation: "animate-pulse" },
-      { key: 5, value: this.mySqlLogo(), animation: "animate-slit-in-horizontal" }
+      { key: 5, value: this.mySqlLogo(), animation: "animate-slit-in-horizontal" },
+      // { key: 5, value: this.mySqlLogo(), animation: "animate-slit-in-horizontal" },
+      // { key: 5, value: this.mySqlLogo(), animation: "animate-slit-in-horizontal" }
     ],
     [
       { key: 6, value: this.angularLogo(), animation: "animate-heartbeat" },
@@ -38,7 +40,9 @@ export class LoginCollage {
     ],
     [
       { key: 9, value: this.javaLogo(), animation: "animate-java" },
-      { key: 10, value: this.tsLogo(), animation: "animate-flicker" }
+      { key: 10, value: this.tsLogo(), animation: "animate-flicker" },
+      // { key: 10, value: this.tsLogo(), animation: "animate-flicker" },
+      // { key: 10, value: this.tsLogo(), animation: "animate-flicker" }
     ],
     [
       { key: 11, value: this.dockerLogo(), animation: "animate-bounce-in-top" },
